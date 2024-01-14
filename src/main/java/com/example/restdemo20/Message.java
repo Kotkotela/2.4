@@ -17,14 +17,18 @@ public class Message {
     @JsonIgnore
     private Person person;
 
-    public Message(int messageId, String oldTitle, String oldText, LocalDateTime now) {
+    public Message(int messageId, String title, String text, LocalDateTime time) {
+        this.messageId = messageId;
+        this.title = title;
+        this.text = text;
+        this.time = time;
     }
 
     public Message(String title, String text, LocalDateTime time, Person person) {
         this.title = title;
         this.text = text;
-        this.person = person;
         this.time = time;
+        this.person = person;
     }
 
 
@@ -32,6 +36,11 @@ public class Message {
         this.title = title;
         this.text = text;
     }
+
+    public Message() {
+
+    }
+
 
     public int getmessageId() {
         return messageId;
